@@ -52,6 +52,34 @@ $("#zoom_me").elevateZoom({
 
 test3.js
 ================
-    
+7 之后会发现第一张图片好像停很久然后之后就恢复正常
+改变加载顺序
+		   if(currentValue == 0){    
+		   smallImage = 'http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image1.png';
+		   largeImage = 'http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/large/image1.jpg';
+		   }
+		   if(currentValue == 1){    
+		   smallImage = 'http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image2.png';
+		   largeImage = 'http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/large/image2.jpg';
+		   }
+		   if(currentValue == 2){    
+		   smallImage = 'http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image3.png';
+		   largeImage = 'http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/large/image3.jpg';
+		   }
+		   if(currentValue == 3){    
+		   smallImage = 'http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/small/image4.png';
+		   largeImage = 'http://www.elevateweb.co.uk/wp-content/themes/radial/zoom/images/large/image4.jpg';
+		   }
+		   
+8 a)	The photo gallery must use CSS3 transitions ， animation
+keyframes
 
+引入css文件
+
+9 但是发现有重影， 因为js 已经有自己的fade 设置， change to false
+
+10 同样需要当鼠标hover 停止fade 效果
+$("#zoom_01").addClass("nypFade");
+$("#zoom_01").removeClass("nypFade");
+Test-4.js
 
