@@ -1,1 +1,25 @@
 http://www.elevateweb.co.uk/image-zoom/examples
+
+test-1.js
+
+2 interval not work test-2.js
+先看这个 http://www.w3school.com.cn/jsref/met_win_setinterval.asp
+正确的 https://www.w3schools.com/jsref/met_win_setinterval.asp
+before
+function startTimer(){
+		timer=window.setInterval("changeImage()",1000);
+	}
+  
+  after
+function startTimer(){
+		timer=window.setInterval(function(){changeImage()},1000);
+	}
+
+
+3 fix bug :幻灯不显示最后一张图片
+currentValue == 4 改成currentValue == 0
+
+4 http://www.jb51.net/article/94482.htm optioal
+当鼠标放到图片上取消滚动事件， 移出后再添加进去，但是例子不可以直接用
+考虑jquery 事件
+https://api.jquery.com/mouseover/
