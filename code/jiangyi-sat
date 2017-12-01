@@ -1,0 +1,53 @@
+1 bootstap form
+https://www.w3schools.com/bootstrap/bootstrap_forms.asp
+
+
+2 重写submit event to save data
+
+		//override submit button behavior
+		var submitClick = function(e){
+			//Test form validitiy (HTML5) and store it in a global variable so both functions can use it
+			isValid = form[0].checkValidity();
+			if(false === isValid){
+				//allow the browser's default submit event behavior 
+				return true;
+			}
+			//prevent default behavior
+			e.preventDefault();
+			//additional processing - $.ajax() etc
+			//.........
+			alert('Success');
+		};
+		//override submit button click event
+		submitButton.click(submitClick);
+    
+   注意要写在jquery ready
+   
+   
+   3 也可以通过重写submit方法也可以
+       //override submit form event
+		form.submit(submitForm);
+    
+    //submit form behavior
+		var submitForm = function(e){
+			console.log('form submit');
+			//prevent form from submitting valid or invalid
+			e.preventDefault();
+			//user clicked and the form was not valid
+			if(isValid === false){
+				isValid = null;
+				return false;
+			}
+			//user pressed enter, process as if they clicked save instead
+			submitButton.trigger('click');
+		};
+    
+    
+4 how to save data? localstorage or sessionstorage? we choose sessionstorage
+区别看网站
+http://www.w3school.com.cn/html5/html_5_webstorage.asp
+
+5 去保存什么？ 一个个数据？ 还是一个对象？ 对象作为一条记录 模拟数据库
+sessionStorage.donateRecords = [] 不可以， 赋值后只是空字符串
+
+注意 sessionStorage 只能存储字符串 需要用JSON.stringify，JSON.parse
