@@ -34,3 +34,8 @@ function readTextFile(file)
         });
         
  2 使用 tomcat 或者appache
+ 
+ 3考虑局部刷新
+ http://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/chart/events-redraw/
+ https://stackoverflow.com/questions/14100011/highcharts-redraw-vs-new-highcharts-chart
+ 
